@@ -10,7 +10,7 @@ import { PageCenter } from "../components/PageComponents/PageCenter"
 
 // import "../css/CommonLayout.css"
 
-function TOP() {
+function TOPPAGE() {
   const menuNames: string[] = [
     "千本ノック",
     "用語クイズ",
@@ -23,35 +23,29 @@ function TOP() {
       "/fxterms",
       "/report",
     ];
-
     const menuEndpoints: { [key: string]: string; } = {
       "千本ノック": "/kknock",
       "用語クイズ":"/termquiz",
       "用語集":"/fxterm",
       "成績":"/report"
     };
+}
 
+export const TOP = () => {
   return (
     <>
-      {/* <Header /> */}
-      {/* <PageTop body={
-        <>メインメニュー</>
-      } /> */}
       <PageCenter body={
         <>
           <FormImage />
-          <MainButton menuNames={menuNames} menuEndpoint={menuEndpoint}/>
+          {/* <MainButton menuNames={menuNames} menuEndpoint={menuEndpoint}/> */}
         </>
-        } 
+        }
       />
-      {
-        menuEndpoints.map
-      }
-
-      {/* <PageBottom /> */}
-      {/* <Footer /> */}
+        {
+          // menuEndpoints.map
+        }
     </>
-  )
+  );
 }
 
-export default TOP
+export default TOPPAGE
