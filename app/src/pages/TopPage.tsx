@@ -8,7 +8,7 @@ import { PageCenter } from "../components/PageComponents/PageCenter"
 // import { PageBottom } from "../components/PageComponents/PageBottom"
 // import { Footer } from '../components/PageComponents/Footer.tsx'
 
-// import "../css/CommonLayout.css"
+import "../css/CommonLayout.css"
 
 function TOPPAGE() {
   const menuNames: string[] = [
@@ -37,12 +37,15 @@ export const TOP = () => {
       <PageCenter body={
         <>
           <FormImage />
-          {/* <MainButton menuNames={menuNames} menuEndpoint={menuEndpoint}/> */}
+          <div className='titleStructure titleVisual'>
+            メインメニュー
+          </div>
+          <MainButton menuNames={menuNames} menuEndpoint={menuEndpoint}/>
         </>
         }
       />
         {
-          // menuEndpoints.map
+          menuEndpoints.map
         }
     </>
   );

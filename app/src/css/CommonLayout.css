@@ -1,0 +1,512 @@
+/* クラス名も「-」使うかどうかも統一） ⇒一旦使わないで統一 */
+/* 各クラスを「'クラス名'+'Structure'」、「'クラス名'+'Visual'」に分ける */
+.titleStructure {
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 2.7rem);
+}
+
+.quizStartPullContainerStructure {
+    display: flex;
+    align-items: center;
+    width: 15dvw;
+    height: 9dvh;
+}
+
+.quizStartPullArrowStructure {
+    position: absolute;
+    left: 55%;
+    height: 21px;
+    width: auto;
+    z-index: 10;
+    display: flex;
+}
+
+.checkboxItem1Structure {
+    aspect-ratio: 2 / 1;
+    width: 28vmin;
+    height: 14vmin;
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 2.7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.4rem;
+    margin: 0 5% 0;
+}
+
+.checkboxItem1Visual {
+    color: #fff;
+    background-color:#00AEFF;
+    border-bottom: 0.2rem solid #00AE95;
+}
+
+.formImgStructure {
+    position: relative;
+    transform: scale(0.7);
+}
+
+/* #region 継続利用のグリッドコンテナー（ここから） */
+.gridContainerStructure {
+    position: relative;
+    top: -40%;
+    /* transform: translateY(-50%); */
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    /* height: 50dvh; */
+    width: 90svw;
+    display: grid;
+    grid-template-columns: repeat(2, 15dvw);
+    grid-template-rows: repeat(2, 10dvh);
+    grid-gap: 3rem;
+    max-width: 100%;
+    max-height: 100%;
+}
+/* #endregion 継続利用のグリッドコンテナー（ここまで） */
+
+/* #region Newボタンデザイン（ここから） */
+.neonButtonStructure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: clamp(0.563rem, 0.358rem + 1.02vw, 1.125rem);
+    letter-spacing: 6px;
+    font-family: 'Kite One', sans-serif;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.neonButtonVisual {
+    color: #ffffff;
+    background-color: black;
+    border: solid 2px #5bb5b38a;
+}
+
+.neonButtonStructure:hover {
+    animation: lights 50ms linear;
+    animation-fill-mode: forwards;
+}
+
+.neonButtonColor {
+    --color_1: rgba(84,248,255,.8);
+    --color_2: rgba(84,248,255,.6);
+    --color_3: rgba(84,248,255,.3);
+    --color_4: rgba(84,248,255,0);
+    --color_5: rgba(0,0,255,.5);
+    --color_6: rgba(0,0,255,0);
+}
+
+@keyframes lights {
+    100%{
+        box-shadow : 0 0 4px var(--color_1),
+        0 0 4px var(--color_1) inset,
+        0 0 20px var(--color_2),
+        0 0 20px var(--color_2) inset,
+        0 0 48px var(--color_5),
+        0 0 64px var(--color_5) inset;
+        text-shadow : 1px 1px 2px var(--color_1), 
+        -1px -1px 2px var(--color_1), 
+        -1px 1px 2px var(--color_1), 
+        1px -1px 2px var(--color_1),
+        1px 1px 30px var(--color_3),
+        -1px -1px 30px var(--color_3),
+        -1px 1px 30px var(--color_3),
+        1px -1px 30px var(--color_3),
+        1px 1px 50px var(--color_5),
+        -1px -1px 50px var(--color_5),
+        -1px 1px 50px var(--color_5),
+        1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+.neonPull {
+/* 　デフォルトのプルダウンを解除 */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+/* 　neonデザイン */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+    color: #fff;
+    letter-spacing: 8px;
+    font-family: 'Kite One', sans-serif;
+    text-shadow: 1px 1px 2px var(--color_1), 
+        -1px -1px 2px var(--color_1), 
+        -1px 1px 2px var(--color_1), 
+        1px -1px 2px var(--color_1),
+        1px 1px 30px var(--color_3),
+        -1px -1px 30px var(--color_3),
+        -1px 1px 30px var(--color_3),
+        1px -1px 30px var(--color_3),
+        1px 1px 50px var(--color_5),
+        -1px -1px 50px var(--color_5),
+        -1px 1px 50px var(--color_5),
+        1px -1px 50px var(--color_5);
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: solid 2px #fff;
+    box-shadow: 0 0 4px var(--color_1),
+        0 0 4px var(--color_1) inset,
+        0 0 20px var(--color_2),
+        0 0 20px var(--color_2) inset,
+        0 0 48px var(--color_5),
+        0 0 64px var(--color_5) inset;
+}
+/* 　IEでデフォルトの矢印消す */
+.neonPull::-ms-expand {
+    display: none;
+}
+/* #endregion Newボタンデザイン（ここまで） */
+
+/* #region 今後使用しないものもあるが、こんな感じで整理？（ここから） */
+.gridMenuStructure {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 35vmin);
+    grid-template-rows: repeat(3, 20vmin);
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 30vmin;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gridMenuChoiceStructure {
+    aspect-ratio: 10 / 3;
+    width: 50vmin;
+    height: 15vmin;
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 2.7rem);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 0.4rem;
+    margin: 0% 5% 0;
+}
+
+.gridMenuChoiceVisual {
+    color: #fff;
+    background-color:#00AEFF;
+    border-bottom: 0.2rem solid #00AE95;
+}
+
+.gridMenuChoiceStructure:hover {
+    margin-top: 1.5%;
+}
+
+.gridMenuChoiceVisual:hover {
+    color: #00AEFF;
+    background-color:#fff;
+    border-bottom: 0.1rem solid #D9D9D9;
+}
+
+.gridMenuChoiceColor {
+    --color_1: rgba(84,248,255,.8);
+    --color_2: rgba(84,248,255,.6);
+    --color_3: rgba(84,248,255,.3);
+    --color_4: rgba(84,248,255,0);
+    --color_5: rgba(0,0,255,.5);
+    --color_6: rgba(0,0,255,0);
+}
+
+@keyframes lights {
+    100%{
+        box-shadow : 0 0 4px var(--color_1),
+        0 0 4px var(--color_1) inset,
+        0 0 20px var(--color_2),
+        0 0 20px var(--color_2) inset,
+        0 0 48px var(--color_5),
+        0 0 64px var(--color_5) inset;
+        text-shadow : 1px 1px 2px var(--color_1), 
+        -1px -1px 2px var(--color_1), 
+        -1px 1px 2px var(--color_1), 
+        1px -1px 2px var(--color_1),
+        1px 1px 30px var(--color_3),
+        -1px -1px 30px var(--color_3),
+        -1px 1px 30px var(--color_3),
+        1px -1px 30px var(--color_3),
+        1px 1px 50px var(--color_5),
+        -1px -1px 50px var(--color_5),
+        -1px 1px 50px var(--color_5),
+        1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+.gridSectionStructure {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 35vmin);
+    grid-template-rows: repeat(2, 15vmin);
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 26vmin;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gridItemChoiceStructure {
+    aspect-ratio: 28 / 11;
+    width: 28vmin;
+    height: 11vmin;
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 2.7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+    margin: 0 5% 0;
+}
+
+.gridItemChoiceVisual {
+    color: #fff;
+    background-color:#00AEFF;
+    border-bottom: 0.2rem solid #00AE95;
+}
+
+.gridItemChoiceStructure:hover {
+    margin-top: 1.5%;
+}
+
+.gridItemChoiceVisual:hover {
+    color: #00AEFF;
+    background-color:#fff;
+    border-bottom: 0.1rem solid #D9D9D9;
+}
+
+.gridItemChoiceColor {
+    --color_1: rgba(84,248,255,.8);
+    --color_2: rgba(84,248,255,.6);
+    --color_3: rgba(84,248,255,.3);
+    --color_4: rgba(84,248,255,0);
+    --color_5: rgba(0,0,255,.5);
+    --color_6: rgba(0,0,255,0);
+}
+
+@keyframes lights {
+    100%{
+        box-shadow : 0 0 4px var(--color_1),
+        0 0 4px var(--color_1) inset,
+        0 0 20px var(--color_2),
+        0 0 20px var(--color_2) inset,
+        0 0 48px var(--color_5),
+        0 0 64px var(--color_5) inset;
+        text-shadow : 1px 1px 2px var(--color_1), 
+        -1px -1px 2px var(--color_1), 
+        -1px 1px 2px var(--color_1), 
+        1px -1px 2px var(--color_1),
+        1px 1px 30px var(--color_3),
+        -1px -1px 30px var(--color_3),
+        -1px 1px 30px var(--color_3),
+        1px -1px 30px var(--color_3),
+        1px 1px 50px var(--color_5),
+        -1px -1px 50px var(--color_5),
+        -1px 1px 50px var(--color_5),
+        1px -1px 50px var(--color_5);
+        color: #fff;
+        border-color: #fff;
+    }
+}
+/* #endregion 今後使用しないが、こんな感じで整理？（ここまで） */
+
+/* #region クイズ番号・問題文（ここから） */
+.questionStructure {
+    position: relative;
+    /* top: 50%; */
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionSentenceStructure {
+    width: 50%;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionNumberStructure {
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 1rem);
+    padding: 0 2%;
+    border-top-left-radius: 0.2rem; 
+    border-bottom-left-radius: 0.2rem;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    height: inherit;
+}
+
+.questionNumberVisual {
+    background-color:#D9D9D9;
+    color: #000;
+}
+
+.questionSentenceMainStructure {
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 1rem);
+    padding: 0 2%;
+    border-top-right-radius: 0.2rem; 
+    border-bottom-right-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: inherit;
+}
+
+.questionSentenceMainVisual {
+    background-color:#00AEFF;
+    color: #fff;
+}
+/* #endregion クイズ番号・問題文（ここまで） */
+
+/* #region 問題をやめる・次へボタン（ここから） */
+.quitnextContainerStructure {
+    position: relative;
+    height: 5dvh;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 21vmin);
+    grid-template-rows: repeat(1, 6vmin);
+    column-gap: 9vmin;
+}
+
+.quitItemStructure {
+    width: 100%;
+    height: 100%;
+    font-size: clamp(0.5rem, 0.318rem + 0.91vw, 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+}
+
+.quitItemVisual {
+    background-color:#838383;
+    color: #fff;
+    border-bottom: 0.2rem solid #5F5F5F;
+}
+
+.quitItemStructure:hover {
+    margin-top: 1.5%;
+}
+
+.quitItemVisual:hover {
+    background-color:#fff;
+    color: #838383;
+    border-bottom: 0.1rem solid #D9D9D9;
+}
+
+.nextItemStructure {
+    width: 100%;
+    height: 100%;
+    font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+}
+
+.nextItemVisual {
+    background-color:#00AEFF;
+    color: #fff;
+    border-bottom: 0.2rem solid #00AE95;
+}
+
+.nextItemStructure:hover {
+    margin-top: 1.5%;
+}
+
+.nextItemVisual:hover {
+    background-color:#fff;
+    color: #00AEFF;
+    border-bottom: 0.1rem solid #D9D9D9;
+}
+/* #endregion 問題をやめる・次へボタン（ここまで） */
+
+/* #region タブレット（ここから） */
+@media only screen and (max-width:80em) {
+    /* .accountDataStructure {
+        font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 2.7rem);
+    } */
+
+    .formImgStructure{
+        transform: scale(1.0);
+        top: 18%;
+    }
+
+    .gridContainerStructure {
+        grid-template-columns: repeat(2, 24dvw);
+        grid-template-rows: repeat(2, 8dvh);
+    }
+
+    .quizStartPullContainerStructure {
+        width: 27dvw;
+    }
+
+    .quizStartPullArrowStructure {
+        left: 57%;
+    }
+
+    .quitnextContainerStructure {
+        height: 10dvh;
+        grid-template-columns: repeat(2, 27vmin);
+        grid-template-rows: repeat(1, 10vmin);
+        column-gap: 9vmin;
+    }
+}
+/* #endregion タブレット（ここまで） */
+
+/* #region スマホ（ここから） */
+@media only screen and (max-width:30em) {
+    /* .accountDataStructure {
+        font-size: clamp(0.3rem, calc(1.25vw + 0.5rem), 2.7rem);
+    } */
+
+    .formImgStructure {
+        top: 30%;
+    }
+
+    .gridContainerStructure {
+        top: 60%;
+        grid-template-columns: repeat(2, 30dvw);
+        grid-template-rows: repeat(2, 9dvh);
+    }
+
+    .neonButtonStructure {
+        letter-spacing : 3px ;
+    }
+
+    .quizStartPullContainerStructure {
+        height: 7dvh;
+    }
+
+    .quizStartPullArrowStructure {
+        left: 57%;
+        height: 15px;
+    }
+}
+/* #endregion スマホ（ここまで） */

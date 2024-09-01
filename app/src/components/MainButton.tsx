@@ -1,4 +1,4 @@
-import '../css/CommonLayout_New.css'
+import '../css/CommonLayout.css'
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
